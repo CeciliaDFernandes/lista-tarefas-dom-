@@ -1,1 +1,113 @@
+:root {
+  --fundo: #0f0f1a;
+  --cartao: #17172b;
+  --borda: #2a2a45;
+  --texto: #e6e6f0;
+  --texto-suave: #9a9ab5;
+  --destaque: #4455cc;
+  --destaque-hover: #5566dd;
+  --erro: #ff6b81;
+}
 
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  margin: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  width: 100%;
+  max-width: 420px;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+h1 { margin: 0 0 16px; font-size: 24px; }
+
+form { display: flex; gap: 8px; }
+
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  font-size: 16px;
+  background: var(--fundo);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid var(--destaque);
+  outline-offset: 1px;
+}
+
+button {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--destaque);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button:hover { background: var(--destaque-hover); }
+
+.erro {
+  color: var(--erro);
+  min-height: 20px;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+ul { list-style: none; padding: 0; margin: 0; }
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--borda);
+  cursor: pointer;
+}
+
+.item .texto { flex: 1; word-break: break-word; }
+
+.item.feito .texto {
+  text-decoration: line-through;
+  color: var(--texto-suave);
+}
+
+.remover {
+  background: transparent;
+  color: var(--erro);
+  font-size: 18px;
+  padding: 0 8px;
+}
+
+.remover:hover { background: transparent; color: #fff; }
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+#btnLimpar { background: #333355; }
+#btnLimpar:hover { background: #44446b; }
